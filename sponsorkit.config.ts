@@ -14,16 +14,16 @@ export default defineConfig({
     {
       title: 'Past Sponsors',
       monthlyDollars: -1,
-      preset: presets.small,
+      preset: presets.medium,
     },
     {
       title: 'Backers',
-      preset: presets.base,
+      preset: presets.medium,
     },
     {
       title: 'Sponsors',
       monthlyDollars: 10,
-      preset: presets.medium,
+      preset: presets.large,
     },
   ],
 })
