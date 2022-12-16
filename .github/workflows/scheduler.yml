@@ -5,7 +5,7 @@ on:
   schedule:
     - cron: '0 0 * * *'
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   update-sponsors:
@@ -24,10 +24,12 @@ jobs:
         run: npm run build
         env:
           SPONSORKIT_GITHUB_TOKEN: ${{ secrets.SPONSORS_TOKEN }}
-          SPONSORKIT_GITHUB_LOGIN: antfu
+          SPONSORKIT_GITHUB_LOGIN: zuramai
+          SPONSORKIT_OPENCOLLECTIVE_KEY: ${{ secrets.SPONSORS_OPENCOLLECVITE_TOKEN }}
+          SPONSORKIT_OPENCOLLECTIVE_SLUG: zuramai
 
       - name: Commit
-        uses: EndBug/add-and-commit@v4
+        uses: EndBug/add-and-commit@v9
         with:
           message: "chore: update sponsors.svg"
           add: "sponsors.*"
